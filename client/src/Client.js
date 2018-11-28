@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-function search(cb) {
-  return fetch(`api/users`, {
+function search(department, cb) {
+  return fetch(`api/users?department=${department}`, {
     accept: "application/json"
   })
     .then(checkStatus)
