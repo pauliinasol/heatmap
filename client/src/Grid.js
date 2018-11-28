@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import colormap from "colormap";
-import Client from "./Client";
 import Hex, { gridPoints } from "react-hex";
 
 const N_SHADES = 40;
@@ -23,22 +22,8 @@ class DrawHex extends Component {
 }
 
 class Grid extends React.Component {
-  state = {
-    users: null
-  };
-
-  componentWillMount = () => {
-    console.log(this.props.department);
-
-    Client.search(this.props.department, users => {
-      this.setState({
-        users
-      });
-    });
-  };
-
   render() {
-    const { users } = this.state;
+    const { users } = this.props;
     if (!users) {
       return null;
     }

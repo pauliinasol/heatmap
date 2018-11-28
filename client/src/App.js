@@ -1,15 +1,23 @@
 import React, { Component } from "react";
 import Grid from "./Grid";
-import { Dropdown } from "semantic-ui-react";
+import { Dropdown, Loader } from "semantic-ui-react";
+import Client from "./Client";
 
 class App extends Component {
   state = {
-    selectedDepartment: "marketing"
+    selectedDepartment: "",
+    users: []
   };
 
   handleChange = (event, data) => {
-    console.log(data.value);
-    this.setState({ selectedDepartment: data.value });
+    this.setState({ selectedDepartment: data.value, loading: true });
+    // console.log(data.value);
+    Client.search(data.value, users => {
+      this.setState({
+        users,
+        loading: false
+      });
+    });
   };
 
   render() {
@@ -38,8 +46,8 @@ class App extends Component {
           </div>
         </div>
         <div className="ui text">
-          <Grid department="technology" />
-          <Grid department="marketing" />
+          {!this.state.loading && <Grid users={this.state.users} />}
+          <Loader active={this.state.loading} />
         </div>
       </div>
     );
