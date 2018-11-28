@@ -28,7 +28,7 @@ class Grid extends React.Component {
       return null;
     }
     const type = "pointy-topped";
-    const size = 3;
+    const size = 5;
     const oX = 100;
     const oY = 100;
     // TODO Will brake if data size changes, now it works as 101*114 = 11514

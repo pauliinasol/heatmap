@@ -34,8 +34,7 @@ class App extends Component {
         <div className="wrapper">
           <div>
             <Dropdown
-              className="dropdown_occupation"
-              placeholder="Skills"
+              placeholder="Choose the department"
               fluid
               search
               selection
