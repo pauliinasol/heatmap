@@ -31,22 +31,25 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="wrapper">
-          <div>
-            <Dropdown
-              placeholder="Choose the department"
-              fluid
-              search
-              selection
-              options={occupations}
-              value={this.state.selectedDepartment}
-              onChange={this.handleChange}
-            />
+        <div className="container">
+          <div className="wrapper">
+            <h1>Welcome to the Failure Rate Visualizer</h1>
+            <div>
+              <Dropdown
+                placeholder="Choose the department"
+                fluid
+                search
+                selection
+                options={occupations}
+                value={this.state.selectedDepartment}
+                onChange={this.handleChange}
+              />
+            </div>
           </div>
-        </div>
-        <div className="ui text">
-          {!this.state.loading && <Grid users={this.state.users} />}
-          <Loader active={this.state.loading} />
+          <div className="ui text">
+            {!this.state.loading && <Grid users={this.state.users} />}
+            <Loader active={this.state.loading} />
+          </div>
         </div>
       </div>
     );
