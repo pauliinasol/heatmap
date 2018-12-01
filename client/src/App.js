@@ -33,7 +33,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <div className="wrapper">
-            <h1>Welcome to the Failure Rate Visualizer</h1>
+            <h1>Failure Rate Visualizer</h1>
             <div>
               <Dropdown
                 placeholder="Choose the department"
